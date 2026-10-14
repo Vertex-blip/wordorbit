@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#29284f">
+  <meta name="description" content="A private trilingual flashcard deck for English, Kazakh, and Russian with spaced repetition.">
+  <title>WordOrbit — Keep words in motion</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="app">
+    <header class="header"><a class="brand" href="./" aria-label="WordOrbit home"><span class="brand-icon" aria-hidden="true"><i></i></span><span>word<span>orbit</span><b>.</b></span></a><nav class="nav" aria-label="Main navigation"><button type="button" data-view="home">Home</button><button type="button" data-view="library">My words</button></nav><button type="button" class="header-add" data-add-card><span aria-hidden="true">＋</span> Add a word</button></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span>WordOrbit ✳ Keep words in motion</span><span>Quiet practice. Real progress. All on your device.</span></footer>
+  </div>
+  <dialog id="card-dialog" class="card-dialog">
+    <form id="card-form"><div class="dialog-top"><span class="eyebrow">YOUR OWN WORDS</span><button type="button" data-close-dialog aria-label="Close dialog">×</button></div><h2 id="dialog-title">Add a word</h2><p>Write the same idea in all three languages. A short note can help it stick.</p><input type="hidden" name="id"><div class="field"><label for="word-en">English</label><input id="word-en" name="en" maxlength="120" required placeholder="e.g. moon"></div><div class="field"><label for="word-kk">Қазақша</label><input id="word-kk" name="kk" maxlength="120" required placeholder="мысалы: ай"></div><div class="field"><label for="word-ru">Русский</label><input id="word-ru" name="ru" maxlength="120" required placeholder="например: луна"></div><div class="field"><label for="word-note">Memory note <span>(optional)</span></label><textarea id="word-note" name="note" maxlength="250" rows="2" placeholder="A clue, context, or example to remember it"></textarea></div><div class="dialog-actions"><button type="button" data-close-dialog>Cancel</button><button type="submit">Save word ↗</button></div></form>
+  </dialog>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
